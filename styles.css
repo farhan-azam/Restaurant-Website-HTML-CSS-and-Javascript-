@@ -1,7 +1,7 @@
 :root{
     --black:#333;
     --light-color:#cdaa7c;
-    --box-shadow: 0.5rem 1.5rem rgba(0,0,0,.1);
+    --box-shadow: 0.05rem 0.5rem rgba(0,0,0,.1);
 
 }
 
@@ -16,6 +16,7 @@
     transition: all 0.2s linear;
 
 }
+
 
 html{
     font-size: 62.5%;
@@ -35,21 +36,14 @@ header{
     justify-content: space-between;
     box-shadow: var(--box-shadow);
     z-index: 2;
+    
 }
 
-header .logo{
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    color: rgb(206, 218, 40);
-   
-}
 
 header .logo img{
-    position: relative;
-    height: 70px;
-    top: 10px;
+  height: auto;
 }
+
 
 header .navbar a{
     font-size: 1.7rem;
@@ -89,22 +83,21 @@ header .icons #menu
   display: none;
 }
 
+/*media query*/
 
 @media(max-width:991px)
 {
+    
     html{
         font-size: 55%;
-
     }
     header{
         padding: 1rem 2 rem;
-
     }
     header .logo img{
         height:7rem;
     }
 }
-
 
 @media(max-width:768px)
 {
@@ -126,7 +119,6 @@ header .icons #menu
         border-bottom:1rem solid rgba(205, 170, 124, 0.2);
         padding: 1rem;
         clip-path: polygon(0 0,100% 0,100% 0,0 0);
-        z-index: 2;
 
     }
     header .navbar.active{
@@ -139,131 +131,160 @@ header .icons #menu
         font-size: 2rem;
         background: var(--black);
        }
-    .home img{
-        width: 100%;
+    .home .home-slider .slide{
+        justify-content: center;
+        height: 80vh;
+    } 
+    .home .home-slider .slide .content{
+        padding: 0;
+
+    }  
+    .home .home-slider .slide .content h1{
+        font-size: 7rem;
     }
-    .home .text{
-        position: relative;
-        bottom: 0; 
-        left: 0;
-        width: 100%;
-        color: white;
-        text-align: center;
-        padding: 2px;
-        z-index: 1; 
+    .welcome .boxcontainer{
+        display:flex;
+        flex-wrap: wrap;
     }
-    .home .text h1 {
-        font-family: "Ubuntu", sans-serif;
-        color: rgb(58, 107, 58);
-        margin-top: 0;
-        font-size: 15rem;
-        color: black;
-        font-family: "Ubuntu", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: black;
-        background-image: url('images/beryani.jpg');
-        background-size:50px;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent; 
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        transition: font-size 0.3s ease; 
-       
-    
+    .welcome .boxcontainer .box{
+        flex-basis:100%;
     }
-    .home .text h1:hover{
-        font-size:16rem ;
-    }
-   
-    .home .text p {
-        margin-top: 0;
-        font-size: 3rem;
-        color: rebeccapurple;
-      }
+ 
+}
+
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
+    background: url(images/slideshow-9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.home .home-slider .slide .content{
+    text-align: center;
+    padding-left: 9rem;
+
+}
+.home .home-slider .slide .content h3{
+    color: var(--light-color);
+    font-size: 3rem;
+    font-weight: 300;
+}
+.home .home-slider .slide .content h1{
+    color: #fff;
+    font-size: 8rem;
+}
+.home .home-slider .slide .content p{
+    color: #e627;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+    font-weight: 200;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    border: .1rem solid rgba(205,170,124,0.2);
+    background: transparent;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index:1;
     
 }
 
-.home img{
+.btn:before{
+    content: '';
     width: 100%;
-}
-.home .text{
+    height: 100%;
+    background:var(--light-color);
+    z-index: -1;
     position: absolute;
     top: 0;
-    margin-top: 150px;
-    left: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    z-index: 1; 
+    left: -100%;
+    transition: .5s;
+}
+.btn:hover.btn:before{
+    left:0;
 }
 
-.text h1 {
-    margin-top: 100px;
-    
-    font-size: 22rem;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: black;
-    background-image: url('images/beryani.jpg');
-    background-size:150px;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: font-size 0.3s ease;
 
-  }
-  
-  .text h1:hover{
-    font-size: 25rem;
-  }
-  
-  .text h2 {
-    font-size: 10rem;
-    color: bisque;
-    
-  }
-  
-  .text p {
-    margin-top: 150px;
-    font-size: 7rem;
-  }
+section{
+    padding: 8rem 9%;
 
 
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 4.5rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
 
 
+}
+.subheading{
+    text-align:center;
+    color: var(--light-color);
+    font-size: 2.5rem;
+    padding: .5rem 2rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    background: var(--black);
+    display:inline-block;
+}
+.welcome .boxcontainer {
+    display: flex;
+    gap:1.5rem;
 
+}
+.welcome .boxcontainer .box{
+    width: 33%;
+    background:var(--black);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding-bottom: 1%;
+}
+.welcome .boxcontainer .box .image{
+    height: 25rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.welcome .boxcontainer .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.welcome .boxcontainer .box .image:hover img{
+    transform:scale(1.1);
+}
+.welcome .boxcontainer .box .content{
+    padding: 2rem;
+    padding-top: 2rem;
 
+}
+.welcome .boxcontainer .box .content h3{
+    color: var(--light-color);
+    font-size: 2.2rem;
+    font-weight: 400;
 
-   
-    
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+.welcome .boxcontainer .box .content p{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: .5rem 0;
+    line-height: 1.5;
+}
 
 
 
