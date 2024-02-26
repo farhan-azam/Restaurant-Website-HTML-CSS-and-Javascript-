@@ -151,7 +151,7 @@ header .icons #menu
     left:0;
 }
 
-
+/*welcome*/
 
 
 section{
@@ -238,7 +238,7 @@ section{
 .ourchef .item{
     position: relative;
     z-index: 4;
-   overflow:hidden;
+    overflow:hidden;
 }
 
 .ourchef .item:before{
@@ -288,6 +288,8 @@ section{
     top:0
 }
 
+/*reservation*/
+
 .reservation {
     display: flex;
     width: 100%;
@@ -329,6 +331,9 @@ section{
 .reservation .form form input:placeholder{
     color:#b7b3b3;
 }
+
+/*footeer*/
+
 .footer{
     background: #333;
     text-align: center;
@@ -455,6 +460,9 @@ section{
     }
     .reservation .form .fomrholder{
         display: block;
+    }
+    .ourchef .item:active.chefinfo{
+        top:0
     }
  
 }
